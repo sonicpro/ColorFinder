@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'scss/variables' as variables;
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: variables.$qva-white;
+}
+
+@import "scss/mat-styles/mat-input";
+@import "scss/mat-styles/mat-label";
+@import "scss/mat-styles/mat-radio";

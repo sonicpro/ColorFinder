@@ -1,0 +1,18 @@
+@use '../../scss/variables' as variables;
+
+.rgb-text {
+  text-align: center;
+  line-height: 1.25rem;
+}
+
+.rgb-color {
+  line-height: 1.25rem;
+  border: solid 0.0625rem variables.$qva-steel;
+}
+
+:host.matching-color > div {
+  outline: 0.25rem solid #ffcc00;
+  border-radius: 0.25rem;
+  position: relative;
+  z-index: 1;
+}

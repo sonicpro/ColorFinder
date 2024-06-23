@@ -1,0 +1,67 @@
+<form [formGroup]="fg" class="form">
+  <div fxLayout="column" fxFlex="20" class="text-input">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{ sessionIdLabel }}</mat-label>
+      <input matInput formControlName="sessionId" />
+      <button
+        *ngIf="sessionId$ | async"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="resetSessionId()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div fxFlex="5"></div>
+  <div fxLayout="column" fxLayoutAlign="start start" fxFlex="30" class="radio-label">
+    <mat-label>{{ colorMatchingStrategyLabel }}</mat-label>
+    <mat-radio-group formControlName="colorMatchingStrategy">
+      <mat-radio-button value="redMean" [checked]="true">Red mean</mat-radio-button>
+      <!-- <mat-radio-button value="hue">Hue</mat-radio-button> -->
+      <mat-radio-button value="rgbSpace">Rgb space</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div fxLayout="column" fxFlex="20">
+    <mat-label class="select-label" #brightnessLevelLabel>{{
+      brightnessDropDownLabel
+    }}</mat-label>
+    <qva-select
+      (openedChange$)="onOpenedChange($event)"
+      formControlName="levelsDropDown"
+      [options]="brightnessLevels"
+    ></qva-select>
+  </div>
+  <div fxFlex="5"></div>
+  <div fxLayout="column" fxFlex="20" class="text-input">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>{{ colorInputLabel }}</mat-label>
+      <span matPrefix># &nbsp;</span>
+      <input matInput formControlName="color" />
+      <button
+        *ngIf="color$ | async"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="resetColor()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <div fxFlex="2"></div>
+  <div fxFlex="4.2" class="color-view" [ngStyle]="{ 'background-color': '#' + (color$ | async) }" [ngClass]="{ 'empty-color-view': !fg.get('color').valid }"></div>
+</form>
+<div fxLayout="row" fxLayoutAlign="space-evenly start">
+  <qva-color-name-column [colorNames]="colorNames"></qva-color-name-column>
+  <qva-palette
+    fxFlex="1 1 80px"
+    *ngFor="let brightnessLevel of brightnessLevels"
+    [paletteColors]="getPaletteAtAGivenBrightnessLevel(brightnessLevel.value)"
+    [brightnessLevel]="brightnessLevel.value"
+    [selectedBrightnessLevel$]="selectedBrightnessLevel.asObservable()"
+    [matchingColorIndex]="matchingColorIndex"
+  ></qva-palette>
+</div>
+<div class="footer">&nbsp;</div>

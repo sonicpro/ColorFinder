@@ -1,0 +1,105 @@
+:host {
+  width: 100%;
+
+  ::ng-deep mat-form-field {
+    top: 7px;
+    width: 100%;
+
+    .mat-form-field-underline,
+    .mat-form-field-label {
+      display: none;
+    }
+
+    .mat-form-field-wrapper {
+      .mat-form-field-infix {
+        border: 2px solid #b7b3aa;
+        background-color: #e7e5e2;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    
+        .mat-select-value {
+          color: #757275;
+        }
+      }
+    }
+
+    .mat-select-arrow-wrapper {
+      text-align: right;
+
+      .mat-select-arrow {
+        border-top-color: #524f53;
+      }
+    }
+    &.mat-form-field-disabled {
+      ::ng-deep label.mat-form-field-label,
+      ::ng-deep .mat-select-value-text {
+        color: #dddcdd !important;
+      }
+      ::ng-deep .mat-form-field-infix {
+        border-color: #dddcdd !important;
+      }
+    }
+  }
+
+  ::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float label.mat-form-field-label {
+    transform: none;
+    width: 100%;
+    color: #524f53;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  ::ng-deep .mat-form-field-label-wrapper {
+    top: auto;
+    bottom: calc(100% - 13px);
+    overflow: visible;
+    width: 100%;
+    text-overflow: initial;
+
+    .mat-placeholder-required,
+    .mat-form-field-required-marker {
+      color: #d3051e;
+      font-weight: 500;
+    }
+
+    .tooltip-icon {
+      position: absolute;
+      top: -2px;
+      margin-left: 10px;
+      width: 24px;
+      height: 24px;
+      pointer-events: auto;
+    }
+  }
+
+  ::ng-deep .qva-form-select {
+    border-radius: 0;
+
+    &.mat-primary {
+      .mat-option {
+        width: 100%;
+        flex: none;
+        display: flex;
+        align-items: center;
+        white-space: normal;
+        height: auto;
+        min-height: 3rem;
+        line-height: 1.25rem;
+        padding: 0.5rem 1rem;
+
+        .mat-option-text {
+          width: 100%;
+        }
+  
+        &.mat-selected:not(.mat-option-disabled) {
+          color: #534f53;
+          font-weight: 500;
+        }
+  
+        &:hover:not(.mat-selected) {
+          background-color: #f5f5f5;
+        }
+      }
+    }
+  }
+}

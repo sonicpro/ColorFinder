@@ -1,0 +1,8 @@
+<div *ngFor="let color of paletteColors; let i = index">
+  <qva-color-view
+    [color]="color"
+    [index]="i"
+    [matchingColorIndex$]="matchingColorIndex.asObservable()"
+    [isFromSelectedPalette$]="isSelected.asObservable()"
+    ></qva-color-view>
+</div>

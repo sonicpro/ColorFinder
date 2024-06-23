@@ -1,0 +1,15 @@
+mat-form-field > div { 
+  &.mat-form-field-wrapper {
+    padding-bottom: 0.625rem;
+
+    .mat-form-field-underline {
+      bottom: 0.625rem;
+    }
+  }
+}
+
+.text-input {
+  .mat-form-field-flex {
+    margin: 1.3090rem 0 0;
+  }
+}
