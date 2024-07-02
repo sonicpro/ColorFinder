@@ -70,7 +70,7 @@ export class QvaSelectComponent implements OnInit, ControlValueAccessor {
     });
   }
 
-  public openedChangePassThrough: ($event: boolean) => void = ($event) => this.openedChange.next($event);
+  public openedChangePassThrough: ($event: boolean) => void = ($event) => this.openedChange.emit($event);
 
   private _controlValueAccessorChangeFn: (value: unknown) => void = () => {};
 
