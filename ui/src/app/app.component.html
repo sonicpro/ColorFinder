@@ -28,7 +28,7 @@
       brightnessDropDownLabel
     }}</mat-label>
     <qva-select
-      (openedChange$)="onOpenedChange($event)"
+      (openedChange)="onOpenedChange($event)"
       formControlName="levelsDropDown"
       [options]="brightnessLevels"
     ></qva-select>

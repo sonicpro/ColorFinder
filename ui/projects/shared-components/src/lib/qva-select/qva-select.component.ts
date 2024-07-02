@@ -38,7 +38,7 @@ export class QvaSelectComponent implements OnInit, ControlValueAccessor {
   @Input() label!: string;
   @Input() initialOption!: string;
   @Output() emitSelectionChange: EventEmitter<string | number> = new EventEmitter();
-  @Output() openedChange$: EventEmitter<boolean> = new EventEmitter();
+  @Output() openedChange: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder) {}
   writeValue(value: unknown): void {
@@ -70,7 +70,7 @@ export class QvaSelectComponent implements OnInit, ControlValueAccessor {
     });
   }
 
-  public openedChangePassThrough: ($event: boolean) => void = ($event) => this.openedChange$.next($event);
+  public openedChangePassThrough: ($event: boolean) => void = ($event) => this.openedChange.next($event);
 
   private _controlValueAccessorChangeFn: (value: unknown) => void = () => {};
 
