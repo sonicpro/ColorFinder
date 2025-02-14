@@ -3,7 +3,7 @@
 namespace Backend
 {
     /// <summary>
-    /// Contains the actual data extracted from MongoDB that is related to Qognify.QVA.MongoDB.SearchCriteriaBase class and its successors. />
+    /// Contains the actual data extracted from MongoDB that is related to QVA.MongoDB.SearchCriteriaBase class and its successors. />
     /// </summary>
     public class SearchResultData
     {

@@ -24,7 +24,7 @@ import { ColorMatchingStrategy } from 'src/services/models/color-matching-strate
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  public sessionIdLabel = 'Enter a valid Session Id';
+  public sessionIdLabel = 'Enter a Session Id (any GUID matches)';
   public colorMatchingStrategyLabel = 'Color matching strategy:';
   public brightnessDropDownLabel = 'Choose a brightness level:';
   public colorInputLabel = 'Enter a color to match the palette';
